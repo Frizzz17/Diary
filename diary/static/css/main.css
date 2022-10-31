@@ -1,0 +1,25 @@
+body {
+    background-color: rgb(237, 235, 235);
+}
+.post {
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 2px 2px 5px;
+    text-align: justify;
+    padding: 5px;
+    color: rgb(79, 65, 65);
+    margin-top: 10px;
+    cursor: pointer;
+}
+.post:hover {
+    transition: .4s;
+    box-shadow: 5px 5px 3px;
+}
+.label {
+    font-family: Times, serif;
+    font-style: italic;
+    color: grey;
+}
+.posts_wall {
+    margin-top: 20px;
+}

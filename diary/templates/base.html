@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Загружает фреймворк bootstrap -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+    <!-- Загружает иконки для различных устройств -->
+    <link rel="icon" href="img/fav/fav.ico" type="image">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/fav/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/book.png' %}">
+    <link rel="icon" type="image/png" size="16x16" href="{% static 'img/book.png' %}">
+    <!-- Задаёт цвет фона плитки -->
+    <meta name="msapplication-TileColor" content="#000"> 
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+  <body>
+    <header>
+      {% include 'includes/header.html' %}
+    </header>
+    <main>
+      {% block content %}
+        Контент не подвезли!!!
+      {% endblock %}
+    </maim>
+    <footer>
+      {% include 'includes/footer.html' %}
+    </footer>
+  </body>
+</html>

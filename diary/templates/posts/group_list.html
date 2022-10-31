@@ -1,0 +1,5 @@
+{% extends 'base.html' %}
+{% block content %}
+    {{ text }}
+    <a href="{% url 'posts:index' %}">Это главная страница</a>
+{% endblock %}

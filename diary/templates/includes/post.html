@@ -1,0 +1,7 @@
+<div class="post">
+  {{ post.text }}
+  <p> 
+    <span class="label">{{ post.author.first_name }} {{ post.author.last_name }},</span>
+    <span class="label">{{ post.pub_date|date:"j F Y" }} года</span>
+  </p>
+</div>

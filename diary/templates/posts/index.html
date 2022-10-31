@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block title %} Последние обновления на сайте {% endblock %}
+{% block content %}
+  <div class="container posts_wall">
+    {% for post in posts %}
+      {% include 'includes/post.html' %}
+    {% endfor %}
+  </div>
+{% endblock %}
