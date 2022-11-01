@@ -1,7 +1,24 @@
-<div class="post">
-  {{ post.text }}
-  <p> 
-    <span class="label">{{ post.author.first_name }} {{ post.author.last_name }},</span>
-    <span class="label">{{ post.pub_date|date:"j F Y" }} года</span>
-  </p>
+{% load static %}
+<div class="container posts_wall">
+  <div class="post">
+    {{ post.text }}
+    <hr>
+      <div class="row label">
+        <div class="col-12 col-md-9 looks_group">
+          <span><img src="{% static 'img/eye.png' %}" width="20" height="20"></span>
+          <span>{{ count }}</span>
+        </div>
+        <div class="col-12 col-md-3 name_date">
+          <span>
+            <a href="{% url 'posts:profile' post.author.username %}" class="relation">
+              {{ post.author.first_name }} {{ post.author.last_name }}
+            </a>
+          </span> |
+          <span>{{ post.pub_date|date:"d E Y" }} года</span>
+        </div>
+      </div>
+  </div>
 </div>
+{% if forloop.last %}
+  <hr>
+{% endif %}

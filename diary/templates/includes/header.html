@@ -1,7 +1,7 @@
 {% load static %}
-<nav class="navbar navbar-light" style="background-color:Plum">
+<nav class="navbar navbar-light">
   <div class="container">
-    <a class="navbar-brand" href="index.html">
+    <a class="navbar-brand" href="{% url 'posts:index' %}">
       <img src="{% static 'img/book.png' %}" width="30" height="30" class="d-inline-block align-top" alt="">
       <span>Diary</span>
     </a>
