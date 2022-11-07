@@ -4,6 +4,7 @@ from django.contrib.auth import get_user_model
 
 User = get_user_model()
 
+
 class Group(models.Model):
     '''Создает группу.'''
     title = models.CharField(max_length=100)
@@ -29,6 +30,9 @@ class Post(models.Model):
         null=True,
         blank=True,
         related_name='posts'
+    )
+    count = models.IntegerField(
+        default=0
     )
 
     class Meta:

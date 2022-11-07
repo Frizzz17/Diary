@@ -1,12 +1,19 @@
 body {
     background-color: rgb(237, 235, 235);
 }
+a {
+    text-decoration: none;
+    color: black;
+}
 header {
     background-color: plum;
     box-shadow: 1px 2px 10px;
 }
 footer {
     /* background-color: plum; */
+}
+.posts_wall {
+    margin-top: 20px;
 }
 .post {
     background-color: white;
@@ -27,17 +34,16 @@ footer {
     font-size: 13px;
     color: grey;
 }
-.looks_group {
-    /* background-color: rgb(189, 167, 167); */
-}
 .name_date {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, serif;
     font-size: 13px;
     color: grey;
     /* background-color: rgb(241, 233, 233); */
 }
-.posts_wall {
+.desk_post {
+    background-color: white;
     margin-top: 20px;
+    border-radius: 6px;
 }
 .relation {
     text-decoration: none;
@@ -46,4 +52,26 @@ footer {
 .relation:hover {
     text-decoration: none;
     color: rgb(145, 145, 235);
+}
+.data {
+    font-weight: 300;
+}
+.block_link {
+    text-decoration: none;
+    color: black
+}
+.block_link:hover {
+    color: black
+}
+.card {
+    box-shadow: 2px 2px 3px;
+}
+.item-link {
+    color: grey;
+    background-color: rgb(237, 235, 235);
+    font-size: 16px;
+    margin: 10px;
+}
+.active {
+    color: palevioletred;
 }

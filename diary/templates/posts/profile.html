@@ -1,7 +1,10 @@
 {% extends 'base.html' %}
-{% block title %}Страница профайла{% endblock %}
+{% block title %}Страница профайла {{ author.username }}{% endblock %}
 {% block content %}
-  {% for post in posts %}
+  {% for post in page_obj %}
     {% include 'includes/post.html' %}
   {% endfor %}
+  <div class="container">
+    {% include 'includes/paginator.html' %}
+  </div>
 {% endblock %}

@@ -3,20 +3,37 @@
   <div class="post">
     {{ post.text }}
     <hr>
-      <div class="row label">
-        <div class="col-12 col-md-9 looks_group">
-          <span><img src="{% static 'img/eye.png' %}" width="20" height="20"></span>
-          <span>{{ count }}</span>
-        </div>
-        <div class="col-12 col-md-3 name_date">
-          <span>
-            <a href="{% url 'posts:profile' post.author.username %}" class="relation">
-              {{ post.author.first_name }} {{ post.author.last_name }}
-            </a>
-          </span> |
-          <span>{{ post.pub_date|date:"d E Y" }} года</span>
-        </div>
+    <div class="label">
+      <span><img src="{% static 'img/eye.png' %}" width="20" height="20"></span>
+      <span>{{ post.count }}</span>
+    </div>
+    <div class="row label">
+      <div class="col-12 col-md-9">
+        <a href="{% url 'posts:profile' post.author.username %}" class="relation">
+          {{ post.author.first_name }} {{ post.author.last_name }} |
+        </a>
+        <span>{{ post.pub_date|date:"d E Y" }} года</span>
       </div>
+      {% if post.group %}
+        <div class="col-12 col-md-3">
+          <a href="{% url 'posts:group_list' post.group.slug %}" class="relation">
+            {{ post.group.title }}
+          </a>
+          |
+          <a href="{% url 'posts:post_detail' post.id %}" class="relation">
+            Подробнее...
+          </a>
+        </div>
+      {% else %}
+        <div class="col-12 col-md-3">
+          ********
+          |
+          <a href="{% url 'posts:post_detail' post.id %}" class="relation">
+            Подробнее...
+          </a>
+        </div>
+      {% endif %}
+    </div>
   </div>
 </div>
 {% if forloop.last %}

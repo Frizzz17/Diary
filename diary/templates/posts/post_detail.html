@@ -1,9 +1,42 @@
-{% extends base.html %}
+{% extends 'base.html' %}
 {% block title %}{% endblock %}
 {% block content %}
-  <div class="container py-5">
+  <div class="container py-5 desk_post">
     <div class="row">
-        
+      <div class="col-12 col-lg-4 description">
+        <ul>
+          <li>Автор поста: 
+            <a href="{% url 'posts:profile' post.author.username %}"
+              <span class="data">
+                {{ post.author.first_name }}
+                {{ post.author.last_name }}
+              </span>
+            </a>
+          </li>
+          <li>Всего постов пользователя:
+            <span class="data">
+              {{ posts_num }}
+            </span>
+          </li>
+          <li>
+            Группа:
+            {% if post.group %}
+              <a href="{% url 'posts:group_list' post.group.slug %}">
+                <span class="data">{{ post.group.title }}</span>
+              </a>
+            {% else %}
+              <span class="data">*******</span>
+            {% endif %}
+          </li>
+          <li>
+            Количество просмотров:
+            <span class="data">{{ post.count }}</span>
+          </li>
+        </ul>
+      </div>
+      <div class="col-8">
+        {{ post.text }}
+      </div>
     </div>
   </div>
 {% endblock %}
